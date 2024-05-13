@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="DataTypeTask" extends="Task">
+    <interface>
+        <field id="userId" type="string" />
+        <field id="mediaId" type="string" />
+        <field id="orgId" type="string" />
+        <field id="usage" type="string" />
+        <field id="mediaType" type="string" />
+        <field id="duration" type="string" />
+        <field id="createdAt" type="string" />
+        <field id="randomId" type="string" />
+        <field id="type" type="string" />
+        <field id="socketType" type="string" />
+
+    </interface>
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+    <!-- <script type="text/brightscript" uri="pkg:/source/functions.brs" /> -->
+    <script type="text/brightscript" uri="getDataTask.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+</component>

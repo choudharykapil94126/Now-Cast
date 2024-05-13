@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
+<component name="MainScene" extends="Scene">
+
+  <interface>
+        <field id="exitApp" type="boolean" value="false" />
+  </interface>
+
+  <script type="text/brightscript" uri="MainScene.brs" />
+  <script type="text/brightscript" uri="UILogic/ScreenStackLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/ContentTaskLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/GridScreenLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/VideoPlayerLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/DetailsScreenLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/AudioPlayerLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/LoginScreenLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/SplashScreenLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/ChannelVideoPlayerLogic.brs" />
+  <script type="text/brightscript" uri="UILogic/HomeScreenLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+  <children>
+    <Poster id="backgroundImageLaunchScreen" loadSync = "true" uri="" width="0.0" height="0.0" loadDisplayMode = "scaleToFit" />
+    <Timer id="splashScreenDisplayTime" repeat="false" duration="0" />
+    <BusySpinner id="loadingIndicator" visible = "false" />
+    <Group id="videoUnavailablePopup" visible="false">
+      <Rectangle id="videoUnavailablePopupRect" color="#534a5c" width="480" height="150">
+        <Label id="videoUnavailableText" text="Alert" translation="[21,17]" />
+        <Label id="videoUnavailableMessage" text="Some error occured" horizAlign="center" vertAlign="center" translation="[20,50]" />
+        <Label id="videoUnavailableButton" text="OK" color="#05e3df" horizAlign="center" vertAlign="center" translation="[420,110]" />
+      </Rectangle>
+    </Group>
+  </children>
+</component>

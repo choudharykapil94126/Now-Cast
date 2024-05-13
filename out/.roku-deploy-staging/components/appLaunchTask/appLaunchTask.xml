@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component
+  name="AppLaunchTask"
+  extends="Task"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd"
+>
+    <script type="text/brightscript" uri="appLaunchTask.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+    <interface>
+        <field id="data" type="assocarray" />
+        <field id="response" type="assocarray" />
+    </interface>
+
+</component>

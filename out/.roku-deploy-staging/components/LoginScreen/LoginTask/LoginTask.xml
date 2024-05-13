@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component
+  name="LoginTask"
+  extends="Task"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd"
+>
+    <script type="text/brightscript" uri="LoginTask.brs" />
+    <!-- comman brs files imports  -->
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+    <interface>
+
+        <field id="data" type="assocarray" />
+        <field id="callType" type="String" />
+        <field id="response" type="assocarray" />
+        <field id="headerData" type="assocarray" />
+
+    </interface>
+
+</component>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="LoginScreen" extends="Group" initialFocus="emailText">
+  <script type="text/brightscript" uri="loginScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+  <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+
+
+  <interface>
+    <field id="backToPreviousPage" type="boolean" alwaysNotify="true" />
+
+  </interface>
+
+  <children>
+
+    <Rectangle id="brandColorRectangle" width="1280" height="760" translation="[0,0]">
+
+      <LayoutGroup translation="[642, 182]" layoutDirection="vert" horizAlignment="center" vertAlignment="center" itemSpacings="[10]">
+        <Poster id="logInPageLogo" loadSync="false" uri="" loadDisplayMode="scaleToFit" />
+        <Poster id="LoginValidationPoster" width="380" height="35" loadSync="true" visible="false" uri="">
+          <Label id="LoginValidationText" text="Please check your email and password" vertAlign="center" horizAlign="center" translation="[43,10]" />
+        </Poster>
+      </LayoutGroup>
+
+      <Label id="emailText" text="Email" vertAlign="bottom" horizAlign="center" translation="[450, 310]" />
+      <Poster id="emailBoxPoster" loadSync="true" translation="[446, 326]" width="388" height="40" uri="" />
+      <TextEditBox id="emailBox" width="380.0" height="32" fontSize="20" translation="[450, 330]" maxTextLength="75" textColor="0x000000FF" clearOnDownKey="false" hintTextColor="#0xf542e6" backgroundUri="" cursorPosition="10" leadingEllipsis="true" />
+
+      <Label id="passwordText" text="Password" vertAlign="bottom" horizAlign="center" translation="[450, 390]" />
+      <Poster id="passwordBoxPoster" loadSync="true" translation="[446, 406]" width="388" height="40" uri="" visible="false" />
+      <TextEditBox id="passwordBox" width="380" height="32" fontSize="20" translation="[450, 410]" backgroundUri="" maxTextLength="20" textColor="0x000000FF" clearOnDownKey="false" hintTextColor="#0x880088FF" leadingEllipsis="true" secureMode="true" />
+
+      <LayoutGroup translation="[445, 450]" layoutDirection="horiz" itemSpacings="[5]">
+        <Group>
+          <Poster id="checked" width="21" height="18" translation="[12,5]" loadSync="true" uri="" visible="false" />
+          <Poster id="unchecked" width="21" height="18" loadSync="true" translation="[12,5]" uri="" visible="true" />
+          <Poster id="checkBoxBorder" width="33" height="30" translation="[6,-1]" loadSync="true" uri="" visible="false" />
+        </Group>
+        <Label id="showPassword" height="30" text="Show Password" vertAlign="center" horizAlign="center" />
+      </LayoutGroup>
+
+      <Button id="logInBtn" minWidth="380" height="36" translation="[452,500]" iconuri="pkg:/images/logInPage/log.png" focusedIconUri="pkg:/images/logInPage/log.png" focusBitmapUri="" focusFootprintBitmapUri="" showFocusFootprint="true" />
+      <BusySpinner id="audioLoadingSpinner" visible="false" translation="[630,505]" uri="" />
+      <Poster id="logInBorder" loadSync="true" uri="" width="380" height="36" translation="[452,500]" visible="false" />
+
+      <Poster id="keyboardPoster" visible="false" loadSync="true" uri="" width="990" height="260" loadWidth="990" loadHeight="260" translation="[190, 450]" />
+      <Keyboard id="emailKeyboard" translation="[215, 454]" keyColor="0xFFFFF" showTextEditBox="false" visible="false" />
+      <Keyboard id="passwordKeyboard" translation="[215, 454]" keyColor="0xFFFFF" showTextEditBox="false" visible="false" />
+
+    </Rectangle>
+  </children>
+</component>

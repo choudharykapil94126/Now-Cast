@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<component
+  name="AdsLogic"
+  extends="Task"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd"
+>
+    <script type="text/brightscript" uri="adsLogic.brs" />
+    <!-- comman brs files imports  -->
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+    <interface>
+        <field id="data" type="stringarray" />
+        <field id="preRollAdd" type="string" />
+    </interface>
+
+</component>

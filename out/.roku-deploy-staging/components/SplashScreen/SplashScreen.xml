@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<component name = "SplashScreen" extends = "Group" initialFocus="watchBtnId">
+
+  <script type = "text/brightscript" uri = "SplashScreen.brs" />
+  <script type = "text/brightscript" uri = "pkg:/source/utils.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+  <interface>
+    <field id="splashVideo" type="string" alias="splashVideoPlayer.control" />
+    <!-- <field id="splashTimerExample" type="string" alias="timerExample.control" /> -->
+    <field id="splashContent" type="string" alias="splashVideoPlayer.content" />
+    <field id="stopSplashScreen" type="boolean" />
+  </interface>
+
+  <children>
+    <Timer id="waitingTimerForBuffer" repeat="false" />
+    <!-- <Timer id="timerExample" repeat="false" /> -->
+    <Video id="splashVideoPlayer" width="0.0" visible="false" height="0.0" />
+    <Poster id="backgroundImage" loadSync = "true" uri="" height="720" width="1280" loadDisplayMode = "scaleToFit" />
+    <Poster id="dynamicLogo" loadSync = "true" uri="" width="400" loadHeight="720" loadWidth="1280" visible="false" loadDisplayMode = "scaleToFit" />
+    <Poster id= "nowcastLogo" loadSync = "true" visible="false" uri="" />
+
+    <Poster id="leftGradientSplash" loadSync="false" visible="false" uri="" />
+    <Poster id="bottomGradientSplash" loadSync="false" visible="false" uri="" />
+  </children>
+
+</component>   

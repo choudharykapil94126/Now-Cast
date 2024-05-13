@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="VideoScreen" extends="Group" initialFocus="skipBackBtn">
+    <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+    <script type="text/brightscript" uri="VideoScreen.brs" />
+    <interface>
+        <!-- Specifies the content for the Grid -->
+        <field id="content" type="assocarray" />
+        <field id="itemFocused" type="boolean" alwaysNotify="true" />
+        <field id="hitApi" type="boolean" />
+        <field id="progress" type="int" />
+        <field id="itemFocusedInMiddle" type="boolean" />  
+    </interface>
+    <children>
+
+        <!-- background black poster -->
+        <Timer id="timerForVideoUi" repeat="false" duration="5" />
+        <Timer id="timerForPlayingVideo" repeat="false" duration="3" />
+        <Video id="videoPlayer" enableUI="false" height="0.0" width="0.0" />
+        <!-- movie poster -->
+
+        <!-- progress Bar  and running timer starts-->
+        <Group id="videoUi">
+            <Poster id="selectedItemPoster" uri="" width="1280" height="720" loadSync="true" loadWidth="1280" loadHeight="720" loadDisplayMode="scaleToFit" />
+            <LayoutGroup id="timingLayout" layoutDirection="horiz" translation="[155,612]" vertAlignment="center" itemSpacings="[20]">
+                <Label id="itemCurPosition" font="font:SmallestSystemFont" horizAlign = "left" vertAlign = "center" />
+                <Group>
+                    <Rectangle id="progressBarBackground" color="#a2a3a2" width="820" height="3" visible="false" />
+                    <Rectangle id="progressBar" color="#FFFFFF" width="0" height="3" visible="false">
+                        <Poster id="progressBarImageCircle" loadSync="true" width="10" height="10" loadWidth="10" loadHeight="10" uri="" />
+                    </Rectangle>
+                </Group>
+                <Label id="songDuration" font="font:SmallestSystemFont" horizAlign = "left" vertAlign = "center" />
+            </LayoutGroup>
+
+            <Button id="skipBackBtn" maxWidth="30" minWidth="30" height="30" visible="false" translation="[385,640]" focusFootprintBitmapUri="" iconuri="" focusedIconUri="" showFocusFootprint="true" />
+            <BusySpinner id="audioLoadingSpinner" translation="[630,640]" uri="" />
+            <Button id="playPauseBtn" maxWidth="30" minWidth="30" height="30" visible="false" translation="[630,640]" focusBitmapUri="" focusedIconUri="" />
+            <Button id="skipForwardBtn" maxWidth="30" minWidth="30" height="30" visible="false" translation="[875,640]" focusFootprintBitmapUri="" iconuri="" focusedIconUri="" showFocusFootprint="true" />
+        </Group>
+
+        <Poster id="backgroundimage" width="1000" height="150" uri="" visible="false">
+            <Label id="popUpMessage" text="Stream will start playing once someone goes Live" />
+        </Poster>
+
+        <Label id="liveLabel" height="44" visible="false" text = "• Live" color = "#FF0000" horizAlign = "left" vertAlign = "center" translation="[95,625]" />
+        <!-- <Poster id="ImageWhileLoading" width="" height="" uri="https://wallpapercave.com/wp/wp3469892.jpg" visible="true">
+            <Label id="popUpMessage" text="Stream will start playing once someone goes Live" />
+        </Poster> -->
+    </children>
+
+</component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (c) 2020 Roku, Inc. All rights reserved. -->
+<component name="RowListItemComponent" extends="Group" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+  <interface>
+    <field id="itemContent" type="node" onChange="OnContentSet" />
+  </interface>
+  <script type="text/brightscript" uri="RowListItemComponent.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+  <children>
+    <!-- <Group translation="[-17,2]"> -->
+      <Rectangle id="posterBackground" color="0x880088FF" />
+      <Poster id="poster" loadSync = "false" height="144" width="240" loadHeight="144" loadWidth="240" />
+      <Label id="rowListLabel" translation="[0,160]" width="233" />
+    <!-- </Group> -->
+  </children>
+
+</component>

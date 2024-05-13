@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--********** Copyright 2015 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="homeScreen" initialFocus="panelList">
+
+<interface>
+    <field id="pannelList" type="assocarray" alias="panelList" />
+    <field id="vodScreenItemSelect" type="assocarray" alwaysnotify="true" />
+    <field id="vodSigninButtonSelect" type="boolean" alwaysnotify="true" />
+
+</interface>
+<script type="text/brightscript" uri="homeScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/DetailsScreenLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/LoginScreenLogic.brs" />
+
+<children>
+
+
+        <Timer id="timerForHeaderUi" repeat="false" duration="3" />
+
+     <PanelSet id="panelList" width ="1920"> 
+         <!-- <channelScreen id="channelScreen" /> -->
+     </PanelSet>
+
+       <LayoutGroup id="header" layoutDirection="horiz" itemSpacings="[25]"  horizAlignment="center" >
+        <Label
+          id="channelLabel"
+          height="44"
+          font="font:MediumBoldSystemFont"
+          text = "Channel"
+          focusable="true"
+        />
+        <Label
+          id="vodLabel"
+          height="44"
+          font="font:MediumBoldSystemFont"
+          text = "VOD"
+          focusable="true"
+        />
+     </LayoutGroup>
+
+</children>
+</component>
