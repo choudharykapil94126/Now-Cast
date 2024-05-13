@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="AdsScreen" extends="Group" initialFocus="timerskipButton" >
+    
+    <interface>
+        <field id="urlArray" type="stringarray" alwaysnotify="true" onChange="changesDone"  />
+        <field id="checkBackButtonPress" type="boolean"/>
+        <field id="backButtonOnAd" type="boolean" />
+    </interface>
+    
+    <script type="text/brightscript" uri="AdsScreen.brs" />
+    
+    <children>
+        <Video id="adVideoPlayer" height="720" width="1280" />
+        <Label id="label" visible="false" translation="[60,60]" />
+        <Timer id="textTimer" repeat="true" />
+        <Button id="skipButton" maxWidth="300" minWidth="100" height="40" visible="false" translation="[1100,640]" focusFootprintBitmapUri="" iconuri="" focusedIconUri="" showFocusFootprint="true" text="Skip Ad"/>  
+        <Button id="timerskipButton" maxWidth="300" minWidth="100" height="40" visible="false" translation="[1100,640]" focusFootprintBitmapUri="" iconuri="" focusedIconUri="" showFocusFootprint="true" />
+    </children>
+</component>

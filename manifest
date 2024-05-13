@@ -1,0 +1,23 @@
+# Copyright (c) 2020 Roku, Inc. All rights reserved.
+
+# Channel Details
+title=Many Nations Networks
+major_version=1
+minor_version=0
+build_version=1
+
+mm_icon_focus_hd=pkg:/images/ROKU App Icon.png
+splash_screen_hd=pkg:/images/launchScreen/ROKU Launch Screen 1280x720.png
+splash_screen_fhd=pkg:/images/launchScreen/ROKU Launch Screen 1920x1080.png
+splash_color=#000000
+bs_libs_required=roku_ads_lib # library required for RAF ads
+supports_input_launch=1
+splash_min_time=0
+ui_resolutions=hd
+splashScreenSettings: {
+    backgroundColor: "red",
+    transitionEffect: "none"
+}
+bs_libs_required=roku_ads_lib
+
+

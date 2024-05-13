@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
+<component name="DetailsScreen" extends="Group" initialFocus="watchBtnId" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+  <script type="text/brightscript" uri="DetailsScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+
+  <interface>
+    <!-- Content fields -->
+    <field id="content" type="node" />
+
+    <field id="jumpToItem" type="integer" onChange="OnJumpToItem" value="0" alwaysNotify="true" />
+
+    <field id="watchButtonSelected" type="integer" alias="watchBtnId.buttonSelected" />
+    <field id="listenButtonSelected" type="integer" alias="listenBtnId.buttonSelected" />
+
+    <field id="accessRequiredPop" type="boolean" alias="accessRequiredPopupForFreeContent.visible" alwaysNotify="false" />
+    <field id="popUpBtnSelected" type="integer" alias="popUpButton.buttonSelected" alwaysNotify="false" />
+    <field id="videoUnavailablePop" type="boolean" alias="videoUnavailablePopup.visible" alwaysNotify="false" />
+    <field id="broadcastingVideo" type="boolean" alias="backgroundimageForBroadcast.visible" alwaysNotify="false" />
+
+
+    <field id="actionType" type="string" alwaysNotify="true" />
+    <field id="action" type="string" alwaysNotify="false" />
+    <field id="setpopup" type="boolean" onChange="setPopUp" alwaysNotify="true" />
+
+  </interface>
+  <children>
+
+    <Group id="detailScreenPosters">
+      <Poster id="poster" loadSync="false" translation="[120, 0]" uri="" width="1280" height="720" loadWidth="1280" loadHeight="720" />
+      <Poster id="detailLeftGradient" loadSync="false" uri="" width="1280" height="720" loadWidth="1280" loadHeight="720" />
+      <!-- <Poster id="leftGradient" loadSync="false" uri="" visible="false" loadHeight="0.0" loadWidth="0.0" /> -->
+      <!-- <Poster id="bottomGradient" loadSync="false" uri="" visible="false" loadHeight="0.0" loadWidth="0.0"  /> -->
+    </Group>
+
+    <LayoutGroup id="detailData" layoutDirection="vert" horizAlignment="left" vertAlignment="center">
+      <Poster id="detailPageLogo" loadDisplayMode="scaleToFit" height="100" visible="false" loadHeight="100" loadWidth="380" />
+      <LayoutGroup layoutDirection="vert" horizAlignment="left" itemSpacings="[10]">
+        <Label id="titleLabel" />
+        <Label id="detailSubTitle" width="445" />
+        <Label id="descriptionLabel" width="560" lineSpacing="0.5" wrap="true" maxLines="5" />
+        <Label text="" height="17" />
+        <LayoutGroup layoutDirection="horiz" itemSpacings="[25]" vertAlignment="bottom">
+          <Button id="watchBtnId" height="30" minWidth="100" iconuri="" focusedIconUri="" focusBitmapUri="" focusFootprintBitmapUri="" showFocusFootprint="true" />
+          <Button id="listenBtnId" minWidth="100" height="30" iconuri="" focusedIconUri="" focusBitmapUri="" focusFootprintBitmapUri="" showFocusFootprint="true" />
+        </LayoutGroup>
+      </LayoutGroup>
+
+    </LayoutGroup>
+
+    <Group id="accessRequiredPopupForFreeContent" visible="false">
+      <Poster id="popUpRect" width="1216" height="260" uri="">
+        <Label id="popUpTitle" />
+        <Button id="popUpButton" iconUri="" focusedIconUri="" minWidth="85">
+          <Rectangle id="popUpButtonRect" width="87" height="34" translation="[2,2]">
+            <Label id="popUpButtonText" text="Sign in" translation="[15,8]" />
+          </Rectangle>
+          <Poster id="signInFocusDetailScreen" uri="" width="89" height="37" translation="[0,0]" />
+        </Button>
+        <Label id="popUpMessage" text="or create an account by downloading Oodles Technologies's mobile app or visit our website at" />
+        <Label id="organisationSite" />
+      </Poster>
+    </Group>
+
+    <Group id="videoUnavailablePopup" visible="false">
+      <Rectangle id="videoUnavailablePopupRect" color="#534a5c" width="480" height="150">
+        <Label id="videoUnavailableText" text="Alert" translation="[21,17]" />
+        <Label id="videoUnavailableMessage" text="" horizAlign="center" vertAlign="center" translation="[20,50]" />
+        <Label id="videoUnavailableButton" text="OK" color="#05e3df" horizAlign="center" vertAlign="center" translation="[420,110]" />
+      </Rectangle>
+    </Group>
+
+       <Poster id="backgroundimageForBroadcast" width="1000" height="150" uri="" visible="false">
+            <Label id="popUpMessageForBroadcast" text="Stream will start playing once someone goes Live" />
+        </Poster>
+
+  </children>
+</component>

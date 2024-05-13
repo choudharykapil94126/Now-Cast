@@ -1,0 +1,70 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<!--********** Copyright 2015 Roku Corp.  All Rights Reserved. **********-->
+
+<component name = "vodScreen" extends = "Panel" >
+
+ <script type="text/brightscript" uri="vodScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+  <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/ScreenStackLogic.brs" />
+
+  <interface>
+    <!-- Specifies the content for the Grid -->
+    <field id="content" type="node" alias="RowList.content" />
+    <field id="rowItemSelected" type="intarray" alwaysnotify="true" alias="RowList.rowItemSelected" />
+    <field id="signInButtonSelected" type="intarray" alias="signInButton.buttonSelected" alwaysnotify="true" />
+    <field id="bannerVideoControl" type="string" alias="bannerVideo.control" alwaysnotify="true" />
+    <field id="panelListFocus" type="boolean" alwaysnotify="true" />
+    <field id="rowListFocus" type="boolean" alwaysnotify="true" onChange="focusRowlist" />
+
+  </interface>
+
+  <children>
+  <Group translation="[0,-115]">
+    <Timer id="timerForPlayingBannerVideo" repeat="false" duration="5" />
+
+    <!-- Label with title and length of content -->
+
+    <Group id="gridScreenPosters" visible="false">
+      <Video id="bannerVideo" translation="[528,0]" width="752" height="423" visible="false" enableUI="false" bufferingTextColor="#ffffff" loop="true" />
+      <Poster id="bannerImage" loadSync="false" uri="" translation="[528,0]" />
+      <Poster id="leftGradient" loadSync="true" uri="" width="1280" height="720" loadHeight="0.0" loadWidth="0.0" />
+      <Poster id="bottomGradient" loadSync="true" uri="" width="1280" height="720" loadHeight="0.0" loadWidth="0.0" translation="[10,35]" />
+      <Poster id="unusedGradient" loadSync="false" visible="false" uri=""  loadHeight="0.0" loadWidth="0.0" />
+    </Group>
+
+    <LayoutGroup itemSpacings="[10]" translation="[88, 25]">
+      <Label height="110">
+        <Poster id="nowCastLogo" loadSync="true" uri="" loadWidth="420" loadHeight="110" loadDisplayMode="scaleToFit" />
+      </Label>
+      <Label id="titleLabel" width="340" maxLines="2" wrap="true" lineSpacing="0" />
+      <Label id="subTitleLable" width="410" height="42" />
+      <Label id="descriptionLabel" width="520" height="100" color="#bebebe" font="font:MediumBoldSystemFont" horizAlign="left" vertAlign="top" translation="[97,215]" lineSpacing="0.2" truncateOnDelimiter="" wrap="true" focusable="true" maxLines="4" />
+    </LayoutGroup>
+
+    <!-- Sign IN button XML  -->
+    <Group>
+     <!-- <RowList id="rowList" translation="[ 95, 380 ]" itemComponentName="RowListItemComponent" itemSize="[ 1208, 310 ]" rowItemSize="[ [245,149]]" itemSpacing="[ 0, -68 ]" rowItemSpacing="[[15,0]]" focusBitmapUri="pkg:/images/250.png" focusFootprintBitmapUri="" showRowLabel="[ true ]" focusXOffset="[0]" rowLabelFont="font:MediumBoldSystemFont" rowFocusAnimationStyle="floatingFocus" rowLabelOffset="[[0,20]]" numRows="2" /> -->
+      <RowList id="rowList" translation="[ 97, 380 ]" itemComponentName="RowListItemComponent" itemSize="[ 1208, 310 ]" rowItemSize="[ [240,144]]" itemSpacing="[ 0, -68 ]" rowItemSpacing="[[22,0]]" showRowLabel="[ true ]" focusable="true" rowLabelFont="font:MediumBoldSystemFont" rowFocusAnimationStyle="floatingFocus" rowLabelOffset="[[0,20]]" numRows="2" />
+      <Button id="signInButton" minWidth="110" visible="false" focusable="true" height="34" iconuri="" focusedIconUri="" focusBitmapUri="" focusFootprintBitmapUri="" showFocusFootprint="true" translation="[1100,30]" />
+      <Button id="signOutButton" minWidth="110" visible="false" focusable="true" height="34" iconuri="" focusedIconUri="" focusBitmapUri="" focusFootprintBitmapUri="" showFocusFootprint="true" translation="[1100,30]" />
+      <Poster id="signInPoster" uri="" width="112" height="36" visible="false" translation="[1100,30]" />
+    </Group>
+
+
+    <Group opacity="0.5">
+      <Rectangle id="darkBackground" height="720" width="1280" color="#050505" visible="false" />
+    </Group>
+
+    <Rectangle id="signOutConfirmationBox" width="700" height="200" color="#FFFFFF" translation="[300,200]" visible="false">
+      <Label id="signoutAlertTitle" text="Logout" color="#000000" translation="[50,30]" />
+      <Label id="signoutAlertMsg" text="Are you sure you want to logout?" color="#000000" translation="[50,70]" />
+      <Label id="signOutCancelBtn" text="CANCEL" color="#000000" translation="[470,155]" />
+      <Label id="signOutConfirmBtn" text="CONFIRM" color="#000000" translation="[570,155]" />
+    </Rectangle>
+  </Group>
+
+  </children>
+
+</component>

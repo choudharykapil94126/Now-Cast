@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+<component name = "channelScreen" extends = "Panel"  >
+
+<interface>
+  <field id = "changeVedioUi" type = "string" alwaysNotify="true" onChange = "changeUi" />
+  <field id = "changeUi" type = "string" alwaysNotify="true" onChange = "changeUiNormal" />
+  <field id = "changeUiTimer" type = "string" alwaysNotify="true" onChange = "changeUiTimer" />
+  <field id = "playVideo" type = "string" alwaysNotify="true" onChange = "onPlayVideo" />
+  <field id = "hideHeader" type = "string" alwaysNotify="true" />
+  
+</interface>
+
+ <script type="text/brightscript" uri="channelScreen.brs" />
+
+  <children >
+        <Timer id="timerForVideoUi" repeat="false" duration="3" />
+        <Video id="videoPlayer"  enableUI="false" height="0.0" width="0.0" />
+        <BusySpinner id="loadingSpinner" visible = "false" />
+
+  </children>
+
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
+<component name="BroadcastingTask" extends="Task">
+    <interface>
+        <field id="response" type="assocarray" />
+        <field id="mediaItemId" type="string" />
+    </interface>
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+    <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+    <script type="text/brightscript" uri="BroadcastingTask.brs" />
+</component>

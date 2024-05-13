@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<component name="ChannelVideoScreen" extends="Group">
+    <script type="text/brightscript" uri="pkg:/source/functions.brs" />
+    <script type="text/brightscript" uri="ChannelVideoScreen.brs" />
+    <interface>
+        <!-- Specifies the content for the Grid -->
+        <field id="content" type="assocarray" />
+        <field id="itemFocused" type="boolean" alwaysNotify="true" />
+        <field id="itemPlayed" type="boolean" alwaysNotify="true" />
+    </interface>
+    <children>
+
+        <!-- background black poster -->
+        <Video id="videoPlayer" enableUI="false" height="0.0" width="0.0" />
+       
+    </children>
+
+</component>
