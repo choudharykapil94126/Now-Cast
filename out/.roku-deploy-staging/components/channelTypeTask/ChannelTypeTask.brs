@@ -81,7 +81,7 @@ function GetChannelByMediaItemId(media as string) as object
     GetUserSubscriptionDetailById.addHeader("deviceType", "ROKU")
     ' if user is logged in
     ' if no login found
-    print sec.Read("loginToken") , "here is the hero"
+    ' print sec.Read("loginToken") , "here is the hero"
     if sec.Read("loginToken") = ""
         GetUserSubscriptionDetailById.SetURL(ApiUrl().adminServiceUrl + "mediaItem/mediaItemId/" + media + "?organizationId=" + utility().organizationId)
     else
