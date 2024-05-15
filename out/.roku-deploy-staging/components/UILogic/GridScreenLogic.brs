@@ -13,12 +13,14 @@ end sub
 
 sub OnGridScreenItemSelected(event as object)
     ' print "GridScreenLogic: - OnGridScreenItemSelected"
+    print event.getData()
     m.GridScreen.bannerVideoControl = "stop"
     grid = event.GetRoSGNode()
     ' extract the row and column indexes of the item the user selected
     m.selectedIndex = event.GetData()
     ' the entire row from the RowList will be used by the Video node
     rowContent = grid.content.GetChild(m.selectedIndex[0])
+    print rowContent , "rowContent"
     ShowDetailsScreen(rowContent, m.selectedIndex[1])
 end sub
 

@@ -12,6 +12,7 @@
       <Rectangle id="posterBackground" color="0x880088FF" />
       <Poster id="poster" loadSync = "false" height="144" width="240" loadHeight="144" loadWidth="240" />
       <Label id="rowListLabel" translation="[0,160]" width="233" />
+      <Label id="liveIndication" translation="[195,5]" text = "• Live" color = "#FF0000" font="font:SmallestSystemFont" visible = "false"/>
     <!-- </Group> -->
   </children>
 

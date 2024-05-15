@@ -157,6 +157,7 @@ sub LoginResponse(responsData as object)
     ' print "LoginScreen.brs: - LoginResponse"
 
     response = responsData.getData()
+    print "responsData.getData()" , response.data
 
     if response.success = true
         m.global.loginToken = response.data.token

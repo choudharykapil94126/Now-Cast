@@ -81,11 +81,12 @@ function GetChannelByMediaItemId(media as string) as object
     GetUserSubscriptionDetailById.addHeader("deviceType", "ROKU")
     ' if user is logged in
     ' if no login found
+    ' print sec.Read("loginToken") , "here is the hero"
     if sec.Read("loginToken") = ""
         GetUserSubscriptionDetailById.SetURL(ApiUrl().adminServiceUrl + "mediaItem/mediaItemId/" + media + "?organizationId=" + utility().organizationId)
     else
         GetUserSubscriptionDetailById.SetURL(ApiUrl().adminServiceUrl + "mediaItem/" + media)
-        GetUserSubscriptionDetailById.addHeader("Authorization", "Bearer " + sec.Read("loginToken").Trim())
+        GetUserSubscriptionDetailById.addHeader("Authorization", "Bearer " + sec.Read("loginToken").Trim()) 'from this line we are renewing the login token
     end if
     req = GetUserSubscriptionDetailById.AsyncGetToString()
 
