@@ -7,7 +7,7 @@ sub ShowVideowithAds(contents as object)
     ' adUrl = m.global.vastTagUrl
     ' adUrl = ""
 
-    m.isPrevAdsPlay = false
+    m.isPrevAdsPlay = false ' Used for if firstAdVideo Play or not
 
     print m.data, "which video is coming"
     print Left(m.data.url, 23)
@@ -66,7 +66,7 @@ end sub
 
 
 sub dataResponse(event as object)
-    m.isPrevAdsPlay = true
+    m.isPrevAdsPlay = true ' It means first ads video play
     ' sub dataResponse()
     if event.getData()[0] = ""
         ShowVideo()
@@ -86,7 +86,7 @@ sub dataResponse(event as object)
 end sub
 
 sub ShowVideo()
-    if(m.isPrevAdsPlay = true)
+    if(m.isPrevAdsPlay = true) ' If first Ad video play only we close ad video otherwise no
         CloseScreen(m.adsVideoPlayer)
     end if
     print "blablablabla",
