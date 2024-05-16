@@ -6,6 +6,9 @@ sub ShowVideowithAds(contents as object)
     ' finding full url of add
     ' adUrl = m.global.vastTagUrl
     ' adUrl = ""
+
+    m.isPrevAdsPlay = false
+
     print m.data, "which video is coming"
     print Left(m.data.url, 23)
     if m.global.enableVastTag = true and Left(m.data.url, 23) <> "https://www.youtube.com" and m.data.livetype <> "broadcasting"
@@ -63,6 +66,7 @@ end sub
 
 
 sub dataResponse(event as object)
+    m.isPrevAdsPlay = true
     ' sub dataResponse()
     if event.getData()[0] = ""
         ShowVideo()
@@ -82,8 +86,9 @@ sub dataResponse(event as object)
 end sub
 
 sub ShowVideo()
-
-    CloseScreen(m.adsVideoPlayer)
+    if(m.isPrevAdsPlay = true)
+        CloseScreen(m.adsVideoPlayer)
+    end if
     print "blablablabla",
     m.videoPlayer = CreateObject("roSGNode", "VideoScreen") ' create new instance of video node for each playback
     m.videoPlayer.content = m.data
